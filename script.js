@@ -201,3 +201,82 @@
   draw();
 })();
 
+/* ═══════════════════════
+   ABOUT — STAT COUNTER ANIMATION
+═══════════════════════ */
+(function(){
+  const stats = [
+    {id:'stat-cgpa', value:'8.46', delay:400},
+    {id:'stat-projects', value:'2+', delay:700},
+    {id:'stat-hackathon', value:'2×', delay:1000},
+    {id:'stat-win', value:'🏆', delay:1300},
+  ];
+
+  function animateCount(el, finalVal, duration){
+    // For numeric values, count up; for symbols just reveal
+    const isNumeric = parseFloat(finalVal);
+    if(!isNumeric){
+      setTimeout(()=>{ el.textContent = finalVal; }, duration);
+      return;
+    }
+    const num = parseFloat(finalVal);
+    const suffix = finalVal.replace(/[\d.]/g,'');
+    const start = performance.now();
+    function step(now){
+      const t = Math.min((now-start)/duration, 1);
+      const eased = 1 - Math.pow(1-t,3);
+      const cur = (num * eased).toFixed(num%1?2:0);
+      el.textContent = cur + suffix;
+      if(t<1) requestAnimationFrame(step);
+      else el.textContent = finalVal;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Use IntersectionObserver to trigger when about section is visible
+  const aboutSection = document.getElementById('about');
+  let triggered = false;
+  const observer = new IntersectionObserver((entries)=>{
+    if(entries[0].isIntersecting && !triggered){
+      triggered = true;
+      stats.forEach(s=>{
+        const el = document.getElementById(s.id);
+        setTimeout(()=>{
+          el.innerHTML='';
+          animateCount(el, s.value, 900);
+        }, s.delay);
+      });
+    }
+  },{threshold:0.3});
+  observer.observe(aboutSection);
+})();
+
+/* ═══════════════════════
+   TYPEWRITER
+═══════════════════════ */
+(function(){
+  const lines=[
+    "The best stories, like the best code, know exactly when to stop.",
+    "She wrote characters who felt real. Then she learned to build things that were.",
+    "Every bug is just a plot twist the author didn't intend.",
+    "I write to understand people. I code to build things for them."
+  ];
+  let li=0,ci=0,deleting=false,wait=0;
+  const tw=document.getElementById('typewriter');
+  function type(){
+    const line=lines[li];
+    if(wait>0){wait--;setTimeout(type,50);return;}
+    if(!deleting){
+      ci++;
+      tw.innerHTML=line.slice(0,ci)+'<span class="tw-cursor"></span>';
+      if(ci===line.length){deleting=true;wait=65;setTimeout(type,50);}
+      else setTimeout(type,46);
+    } else {
+      ci--;
+      tw.innerHTML=line.slice(0,ci)+'<span class="tw-cursor"></span>';
+      if(ci===0){deleting=false;li=(li+1)%lines.length;wait=12;setTimeout(type,50);}
+      else setTimeout(type,22);
+    }
+  }
+  type();
+})();
