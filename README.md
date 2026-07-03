@@ -1,6 +1,6 @@
 # Anahadpreet Kaur — Portfolio
  
-🔗 **Live site:** [portfolio-silk-mu-pzogk3zhpu.vercel.app](https://portfolio-silk-mu-pzogk3zhpu.vercel.app)
+🔗 **Live site:** [anahadpreet.vercel.app](https://anahadpreet.vercel.app)
  
 A personal portfolio built to showcase my work as a second-year IT student at NIT Jalandhar — projects, skills, hackathon wins, and a bit of the creative writing side too.
 
