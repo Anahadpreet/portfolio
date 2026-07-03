@@ -22,4 +22,4 @@ I'm an IT undergrad at NIT Jalandhar (CGPA 8.46) who likes building things that 
  
 ## Deployment
  
-Hosted on **Vercel**, auto-deployed from the `main` branch on every push — no build step required since it's a static site.
+Hosted on **Vercel**, auto-deployed from the `main` branch on every push , no build step required since it's a static site.
