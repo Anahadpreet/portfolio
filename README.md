@@ -2,11 +2,11 @@
  
 🔗 **Live site:** [anahadpreet.vercel.app](https://anahadpreet.vercel.app)
  
-A personal portfolio built to showcase my work as a second-year IT student at NIT Jalandhar — projects, skills, hackathon wins, and a bit of the creative writing side too.
+A personal portfolio built to showcase my work as a second-year IT student at NIT Jalandhar ,projects, skills, hackathon wins, and a bit of the creative writing side too.
 
 ## About
  
-I'm an IT undergrad at NIT Jalandhar (CGPA 8.46) who likes building things that solve real problems — from browser extensions detecting bots to community book-exchange platforms. I've won a national hackathon track (HackMol 7.0 — Women Track) and been a finalist in another. Outside of tech, I write — I won a district-level story writing competition before I ever wrote a line of code.
+I'm an IT undergrad at NIT Jalandhar (CGPA 8.46) who likes building things that solve real problems from browser extensions detecting bots to community book-exchange platforms. I've won a national hackathon track (HackMol 7.0 Women Track) and been a finalist in another. Outside of tech, I write and I won a district-level story writing competition before I ever wrote a line of code.
  
 ## Features
  
